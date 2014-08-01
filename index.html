@@ -1,1 +1,80 @@
-<p>Greetings, program!</p>
+<html>
+    <head>
+        <title>Simplates</title>
+        <link rel="stylesheet" type="text/css"
+              href="/style.css" />
+        <link rel="stylesheet" type="text/css"
+              href="//cloud.typography.com/6540672/777924/css/fonts.css" />
+        <style>
+            body { font: normal 16px/20px 'Sentinel SSm A', 'Sentinel SSm B'; }
+            h1 { font: bold 36px/42px 'Sentinel SSm A', 'Sentinel SSm B'; margin: 72px 0 0; }
+            h2 { font: bold 20px/24px 'Sentinel SSm A', 'Sentinel SSm B'; margin: 40px 0 0;}
+            .content { max-width: 500px; margin: 40px auto; padding: 0 20px; }
+            pre { border-left: 4px solid #CCC; padding-left: 20px; }
+        </style>
+    </head>
+    <body><div class="content">
+
+        <h1>Simplates</h1>
+
+        <p>Simplates are a file format for server-side web programming.</p>
+
+
+        <h2>Why Simplates?</h2>
+
+        <p>Mixing code into templates leads to unmaintainable spaghetti. On the
+        other hand, putting closely-related templates and code in completely
+        separate subdirectories makes it painful to switch back and forth.</p>
+
+        <p>Simplates improve web development by bringing code and templates as
+        close together as possible, <i>without</i> mixing them.</p>
+
+        <p>We're using simplates successfully in <a
+            href="http://aspen.io/">Aspen</a>, the web framework behind <a
+        href="https://www.gittip.com/">Gittip</a>. We like the pattern. It
+        works for us. Can it also work for other teams using other languages
+        and templating systems and web frameworks? Let's find out. :-)</p>
+
+
+        <h2>What Does a Simplate Look Like?</h2>
+
+        <p>Here's an example:</p>
+
+        <pre>
+import random
+
+[----] python
+program = request.qs['program']
+excitement = "!" * random.randint(1, 10)
+
+[----] text/html via stdlib_format
+&lt;h1&gt;Greetings, {program}{excitement}&lt;/h1&gt;
+
+[----] text/plain via stdlib_format
+Greetings, {program}{excitement}
+
+[----] application/json via json_dump
+{ "program": program
+, "excitement": excitement
+ }</pre>
+
+
+        <h2>Implementations and Tools</h2>
+
+        <ul>
+            <li><a href="http://aspen.io/">Aspen</a>&mdash;a Python web framework that uses simplates with filesystem routing</li>
+            <li><a href="https://github.com/gittip/simplate.vim">simplate.vim</a>&mdash;simplates support for Vim</li>
+            <li><a href="https://github.com/Changaco/kate-highlightings/blob/master/simplate.xml">simplate.xml</a>&mdash;simplates support for Kate</li>
+        </ul>
+
+        <a href="https://github.com/gittip/simplates.org"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+
+        <h2>Feedback? Questions?</h2>
+
+        <p>Start a <a
+        href="https://github.com/gittip/simplates.org/issues/new">conversation
+    on GitHub</a>.</p>
+
+    </div></body>
+</html>
